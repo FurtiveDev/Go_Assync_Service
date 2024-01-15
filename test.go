@@ -104,7 +104,7 @@ func sendResult(id_request int, id_user int, result bool) error {
 	}
 
 	// Создаем запрос на PUT-запрос
-	req, err := http.NewRequest("PUT", fmt.Sprintf("http://0.0.0.0:8000/api/update-request-status/%d/", id_request), bytes.NewBuffer(jsonData))
+	req, err := http.NewRequest("PUT", fmt.Sprintf("http://localhost:8000/api/update-request-status/%d/", id_request), bytes.NewBuffer(jsonData))
 	if err != nil {
 		return fmt.Errorf("Ошибка при создании PUT-запроса: %v", err)
 	}
